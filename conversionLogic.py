@@ -1,8 +1,4 @@
 
-# ℃
-# K
-# ℉
-# Celsius to Fahrenheit
 def celsiusToFahrenheit(celsius): 
     return (celsius * 1.8) + 32
 
@@ -49,7 +45,4 @@ def main(firstArg, firstEntry):
             kelvin = FahrenheitToKelvin(firstEntry)
             celsius = round(celsius, 3)
             kelvin = round(kelvin, 3)
-            return (f"{kelvin}K"),(f"{celsius}℃") 
-        
-        
-        
+            return (f"{kelvin}K"),(f"{celsius}℃")   

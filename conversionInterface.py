@@ -26,6 +26,7 @@ options = [
 
 # Create Entry widgets
 firstEntry = Entry(root, font=("Calibri", 15))
+firstEntry.insert(0, "Input Value Here")
 secondEntry = Entry(root, font=("Calibri", 15))
 thirdEntry = Entry(root, font=("Calibri", 15))
 thirdEntry.grid(row=1, column=3)
