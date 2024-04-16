@@ -7,7 +7,11 @@ root.geometry("450x100")
 
 # Function to change label text
 def show():
-    return main(firstArg.get(), float(firstEntry.get()))
+    try:
+       return main(firstArg.get(), float(firstEntry.get()))
+    except:
+        secondEntry.insert(0, "Error")
+        thirdEntry.insert(0, "Invalid Input")
 
 # Function to set the 2nd Entry
 def set_text():
