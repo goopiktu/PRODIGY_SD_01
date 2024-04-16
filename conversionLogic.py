@@ -1,5 +1,5 @@
-# Celsius to Farenheit
-def celsiusToFarenheit(celsius): 
+# Celsius to Fahrenheit
+def celsiusToFahrenheit(celsius): 
     return (celsius * 1.8) + 32
 
 # Celsius to Kelvin
@@ -10,17 +10,17 @@ def celsiusToKelvin(celsius):
 def kelvinToCelsius(kelvin):
     return kelvin - 273.15
 
-# Kelvin To Farenheit
-def kelvinToFarenheit(kelvin):
+# Kelvin To Fahrenheit
+def kelvinToFahrenheit(kelvin):
     return kelvinToCelsius(kelvin) * 1.8 + 32
 
-# Farenheit To Celsius
-def farenheitToCelsius(farenheit):
-    return (farenheit - 32) * 0.5555555556
+# Fahrenheit To Celsius
+def FahrenheitToCelsius(Fahrenheit):
+    return (Fahrenheit - 32) * 0.5555555556
 
-# Farenheit To Kelvin
-def farenheitToKelvin(farenheit):
-    return farenheitToCelsius(farenheit) + 273.15
+# Fahrenheit To Kelvin
+def FahrenheitToKelvin(Fahrenheit):
+    return FahrenheitToCelsius(Fahrenheit) + 273.15
 
 
 
@@ -30,8 +30,8 @@ def main(firstArg, secondArg, firstEntry):
 
     option = firstArg + " to " + secondArg
     match option:
-        case "Celsius to Farenheit":
-            return celsiusToFarenheit(firstEntry)
+        case "Celsius to Fahrenheit":
+            return celsiusToFahrenheit(firstEntry)
         
         case "Celsius to Kelvin":
             return celsiusToKelvin(firstEntry)
@@ -39,12 +39,12 @@ def main(firstArg, secondArg, firstEntry):
         case "Kelvin to Celsius":
             return kelvinToCelsius(firstEntry)
         
-        case "Kelvin to Farenheit":
-            return kelvinToFarenheit(firstEntry)
+        case "Kelvin to Fahrenheit":
+            return kelvinToFahrenheit(firstEntry)
         
-        case "Farenheit to Celsius":
-            return farenheitToCelsius(firstEntry)
+        case "Fahrenheit to Celsius":
+            return FahrenheitToCelsius(firstEntry)
         
-        case "Farenheit to Kelvin":
-            return farenheitToKelvin(firstEntry)
+        case "Fahrenheit to Kelvin":
+            return FahrenheitToKelvin(firstEntry)
         

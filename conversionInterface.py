@@ -21,7 +21,7 @@ def set_text():
 # Dropdown menu options 
 options = [ 
     "Celsius", 
-    "Farenheit", 
+    "Fahrenheit", 
     "Kelvin", 
 ] 
   
@@ -36,7 +36,7 @@ secondArg = StringVar()
   
 # initial menu text 
 firstArg.set( "Celsius" ) 
-secondArg.set( "Farenheit" )
+secondArg.set( "Fahrenheit" )
   
 # Create Dropdown menu 
 drop = OptionMenu( root , firstArg , *options) 
