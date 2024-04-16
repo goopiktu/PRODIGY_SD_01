@@ -3,58 +3,56 @@ from conversionLogic import main
 
 root = Tk()
 root.title("Temperature converter")
-root.geometry("500x100")
+root.geometry("450x100")
 
-# Change the label text 
+# Function to change label text
 def show():
-    label.config( text = firstArg.get() + " to " + secondArg.get())  
-    return main(firstArg.get(), secondArg.get(), float(firstEntry.get())) 
+    return main(firstArg.get(), float(firstEntry.get()))
 
-# for setting the 2nd Entry
+# Function to set the 2nd Entry
 def set_text():
     secondEntry.delete(0, END)
-    ans = show()
-    fans = round(ans, 3)
-    secondEntry.insert(0, str(fans))
-    return
+    thirdEntry.delete(0, END)
+    ans, ans1 = show()
+    secondEntry.insert(0, str(ans))
+    thirdEntry.insert(0, str(ans1))
 
-# Dropdown menu options 
-options = [ 
-    "Celsius", 
-    "Fahrenheit", 
-    "Kelvin", 
-] 
-  
-firstEntry = Entry(root, font=("Arial", 15) )
-secondEntry = Entry(root, font=("Arial", 15) )
-secondEntry.grid(row=0, column=1)
+# Dropdown menu options
+options = [
+    "Celsius",
+    "Fahrenheit",
+    "Kelvin",
+]
+
+# Create Entry widgets
+firstEntry = Entry(root, font=("Calibri", 15))
+secondEntry = Entry(root, font=("Calibri", 15))
+thirdEntry = Entry(root, font=("Calibri", 15))
+thirdEntry.grid(row=1, column=3)
+secondEntry.grid(row=0, column=3)
 firstEntry.grid(row=0, column=0)
 
-# datatype of menu text 
-firstArg = StringVar() 
-secondArg = StringVar()
-  
-# initial menu text 
-firstArg.set( "Celsius" ) 
-secondArg.set( "Fahrenheit" )
-  
-# Create Dropdown menu 
-drop = OptionMenu( root , firstArg , *options) 
-drop1 = OptionMenu( root , secondArg , *options)
-drop.config(width=14, font=("Arial", 15))
-drop1.config(width=14, font=("Arial", 15))
-drop.grid(row=1, column=0) 
-drop1.grid(row=1, column=1)
-  
-# Create button, it will change label text 
-button = Button( root , text = "=" , command =lambda:set_text(), font=("Arial", 15) ).grid(row=0, column=3, rowspan=3)
+# Datatype of menu text
+firstArg = StringVar()
 
+# Initial menu text
+firstArg.set("Celsius")
 
-# Create output Label 
-label = Label( root , text = " ", font=("Arial", 15)) 
-label.grid(row=3, column=0, columnspan=2)
+# Create Dropdown menu
+drop = OptionMenu(root, firstArg, *options)
+drop.config(width=16, font=("Calibri", 15))
+drop.grid(row=1, column=0)
 
+# Create button to trigger the conversion
+button = Button(root, text="=", command=set_text, font=("Calibri", 15))
+button.grid(row=0, column=2, rowspan=3, padx=4)
 
-  
-# Execute tkinter 
-root.mainloop() 
+# Centering content in the grid
+root.grid_rowconfigure(0, weight=1)
+root.grid_rowconfigure(1, weight=1)
+root.grid_columnconfigure(0, weight=1)
+root.grid_columnconfigure(2, weight=1)
+root.grid_columnconfigure(3, weight=1)
+
+# Execute tkinter
+root.mainloop()
